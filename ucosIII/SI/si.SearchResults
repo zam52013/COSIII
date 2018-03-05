@@ -1,5 +1,0 @@
----- delay_init Matches (4 in 3 files) ----
-Delay.c (c:\users\zhangaiming\desktop\ucosiii\drivers\delay):void delay_init(u8 SYSCLK)
-Delay.h (c:\users\zhangaiming\desktop\ucosiii\drivers):void delay_init(u8 SYSCLK);
-QX.htm (c:\users\zhangaiming\desktop\ucosiii\obj):<BR><BR>[Called By]<UL><LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
-QX.htm (c:\users\zhangaiming\desktop\ucosiii\obj):<P><STRONG><a name="[165]"></a>delay_init</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, delay.o(.text), UNUSED)
