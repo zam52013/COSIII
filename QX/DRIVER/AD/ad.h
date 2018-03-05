@@ -16,10 +16,19 @@
  
  #include "stm32f10x.h"
  /***********AD设备****************/
- //#define ADC1_PERPH
+ #define ADC1_PERPH
 // #define ADC2_PERPH
 // #define ADC3_PERPH
  /***************************/
+ #define BAT_NORMAL  1824//7.2V   电阻上拉39K，下拉10k
+#define BAT_ARM    1748// 6.9v   警告电压   
+#define BAT_LOW   1722  //6.8v低电压
+/***************************/
+
+/***************************/
+#define AD_CH_POW 4
+ /***************************/
+
  #define POARTA  1
  #define POARTB  2
  #define POARTC  3
@@ -70,6 +79,6 @@
  void Adc_Init(void);
  u16 Get_ADC(ADC_TypeDef* ADCx,u8 CH);
  u16 AD_Filter(ADC_TypeDef* ADCx,u8 CH);
- 
+ void Ad_Led_statu(u16 value);
  #endif
  

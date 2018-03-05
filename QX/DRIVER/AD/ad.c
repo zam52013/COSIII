@@ -13,6 +13,9 @@
  */
  
  #include "ad.h"
+ #include "led.h"
+ #include "wt5883.h"
+ #include "usart.h"
 
 /***********AD端口配置表******************/
 const uint32_t AD_IO_CONFIG[3][3]={
@@ -138,6 +141,17 @@ const uint32_t AD_IO_CONFIG[3][3]={
  	Adc_Rcc_Init();
 	Ad_Perph_Init();
 	Adcio_Init();
+	#ifdef DEBUG_PERPH
+		#ifdef ADC1_PERPH
+			printf("ADC1!\r\n");
+		#endif
+		#ifdef ADC2_PERPH
+			printf("ADC2!\r\n");
+		#endif
+		#ifdef ADC3_PERPH
+			printf("ADC3!\r\n");
+		#endif
+	#endif
  }
  /********************************************************************
 ***函数名称: Get_ADC1(u8 CH)
@@ -186,4 +200,72 @@ u16 AD_Filter(ADC_TypeDef* ADCx,u8 CH)
 	And=And-Max-Min;
 	return (And>>1);
 }
+/********************************************************************
+***函数名称: Ad_Led_statu(u16 value)
+***函数说明:AD采样进行语音播报及灯状态显示
+***输入参数:ad采样值
+***输出参数:
+***
+********************************************************************/
 
+void Ad_Led_statu(u16 value)
+{
+	static unsigned char statu=0;
+	static unsigned char alarm=0;
+	//static unsigned char value_count=0;
+	switch(statu)
+	{
+		case 0:
+			if(value>BAT_NORMAL)
+			{
+				LED_PWO1_ON;
+				LED_PWO2_OFF;
+			}
+			else
+			{
+				statu++;
+			}
+			break;
+		case 1:
+			if(value>BAT_ARM)
+			{
+				LED_PWO1_ON_OFF;
+				LED_PWO2_OFF;
+				if(!alarm)
+				{
+					Play_voice(POW_alarm);
+					alarm=!alarm;
+				}
+			}
+			else
+			{
+				alarm=0;
+				statu++;
+			}
+			break;
+		case 2:
+			if(value>BAT_LOW)//低电压
+			{
+				LED_PWO1_OFF;
+				LED_PWO2_ON;
+				if(++alarm>10)
+				{
+					Play_voice(LOW_POW);
+					alarm=0;
+				}
+			}
+			else
+			{
+				alarm=0;
+				statu++;
+			}
+			break;
+		case 3:
+			LED_PWO1_OFF;
+			LED_PWO2_OFF;
+			//POWER_OFF;//关机
+			break;
+		default:
+			break;
+	}
+}

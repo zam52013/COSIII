@@ -19,6 +19,7 @@
 #include "prefs.h"
 #include "ef_qx.h"
 #include "sim7600.h"
+#include "wt5883.h"
 
 #undef QXLOG
 #define QXLOG printf
@@ -137,12 +138,12 @@ qxwz_soc qxwz_soc_create(void)
 	socket_fd = qxwz_soc_init();
 	if(socket_fd >= 0)
 	{
-		QXLOG("socketÁ¬½Ó³É¹¦=%d \r\n",socket_fd);
+		QXLOG("socket connect successful=%d \r\n",socket_fd);
 		return socket_fd;
 	}
 	else
 	{
-		QXLOG(" socketÁ¬½ÓÊ§°Ü\r\n");
+		QXLOG(" socket connect erro\r\n");
 		return -1;
 	}
 }
@@ -160,10 +161,10 @@ int8_t qxwz_soc_connect(qxwz_soc soc,qxwz_soc_address address)
 	char connect_buf[200];
 	memset(connect_buf,0,sizeof(connect_buf));
 	sprintf(connect_buf,"AT+CIPOPEN=0,\"TCP\",\"%s\",%d",address.hostName,address.port);
-	QXLOG("Á¬½Óµ½·şÎñÆ÷= %s\r\n",connect_buf);
+	QXLOG("connect servece= %s\r\n",connect_buf);
 	if((ret = send_at_command(connect_buf,"OPEN",3*AT_CMD_TIMEOUT)) != 0)
 	{
-		QXLOG(" Á¬½Ó³ö´í=%d \r\n",ret);
+		QXLOG("connect erro=%d \r\n",ret);
 		if(qxwz_prefs_flags_get() & QXWZ_PREFS_FLAG_SOCKET_ASYN)
 		{
 			s_connect_fail_flag = TRUE;
@@ -187,17 +188,17 @@ qxwz_ssize_t qxwz_soc_send(qxwz_soc soc,char *send_buffer,size_t length)
 	ret = send_at_command("AT+CIPSEND=0,",">",3*AT_CMD_TIMEOUT);
 	if(ret != 0)
 	{
-		QXLOG("ÎŞ·¨·¢ËÍÊı¾İµ½·şÎñÆ÷!\r\n");//·¢ËÍÊı¾İ
+		QXLOG("can not connect socker!\r\n");//·¢ËÍÊı¾İ
 		qxwz_soc_error(SOC_DEFUALT_CHANNEL);
 		return -1;	
 	}
-	QXLOG("·¢ËÍÊı¾İ......\r\n");//·¢ËÍÊı¾İ
+	QXLOG("send date......\r\n");//·¢ËÍÊı¾İ
 	sprintf(sendbuf,"%s\32\0",send_buffer);
 	QXLOG("%s\32\0",send_buffer);
 	ret = send_at_command(sendbuf,"OK",3*AT_CMD_TIMEOUT);  //»Ø¸´OK£¬Ê±¼ä¿ÉÒÔµ÷
 	if(ret != 0)
 	{
-		QXLOG("·¢ËÍÊı¾İ´íÎó.....\r\n");//·¢ËÍÊı¾İ
+		QXLOG("send erro.....\r\n");//·¢ËÍÊı¾İ
 		if(qxwz_prefs_flags_get() & QXWZ_PREFS_FLAG_SOCKET_ASYN)
 		{
 			s_send_fail_flag = TRUE;
@@ -219,11 +220,11 @@ void qxwz_soc_close(qxwz_soc soc)
 {
 	uint8_t local_soc = soc;
 	int8_t ret = 0;	
-	QXLOG("Ñ¡Ôñ¹Ø±ÕÍ¨µÀsocket=%d.....\r\n",local_soc);//Ö÷¶¯¹Ø±ÕÁ¬½Ó
+	QXLOG("select close socket=%d.....\r\n",local_soc);//Ö÷¶¯¹Ø±ÕÁ¬½Ó
 	ret = send_at_command("AT+CIPCLOSE=0","CLOSE",3*AT_CMD_TIMEOUT);	//¹Ø±ÕÁ¬½Ó
 	if(ret != 0)
 	{
-		QXLOG(" ¹Ø±Õsocket´íÎó.....\r\n");//·¢ËÍÊı¾İ
+		QXLOG("close socket erro.....\r\n");//·¢ËÍÊı¾İ
 		if(qxwz_prefs_flags_get() & QXWZ_PREFS_FLAG_SOCKET_ASYN)
 		{
 			s_close_fail_flag = TRUE;
@@ -241,6 +242,10 @@ void qxwz_soc_close(qxwz_soc soc)
 qxwz_soc qxwz_soc_init(void)
 {
 	int8_t ret = 0;
+	if(Init_Sim)
+	{
+		return 1;
+	}
 	if(s_is_init == FALSE)
 	{
 		ret = init_gsm_gprs();
@@ -249,7 +254,7 @@ qxwz_soc qxwz_soc_init(void)
 			s_is_init = TRUE;
 		}else
 		{
-			QXLOG("Ä£¿é³õÊ¼»¯´íÎócode=%d\r\n",ret);
+			QXLOG("init model erro code=%d\r\n",ret);
 			return -1;
 		}
 	}
@@ -259,13 +264,13 @@ qxwz_soc qxwz_soc_init(void)
 }
 /**------------------------------------------ÖĞ¶Ï·şÎñ³ÌĞòÏà¹Ø--------------------------------------------*/
 /*******************************************************************************
-º¯ Êı Ãû£ºvoid USART2_IRQHandler
+º¯ Êı Ãû£ºvoid USART1_IRQHandler
 ¹¦ÄÜÃèÊö£º®¿Ú2ÖĞ¶Ï·şÎñ³ÌĞò,½ÓÊÕGSMÄ£¿éÓ¦´ğµÄÊı¾İ
 Èë¿Ú²ÎÊı£º
 ·µ»Ø²ÎÊı£º
 ´´½¨Ê±¼ä: 2017-11-02 by zam
 ********************************************************************************/
-void USART2_IRQHandler(void)                	
+void USART1_IRQHandler(void)                	
 {
 	uint8_t res = 0;
 	OSIntEnter();
@@ -287,7 +292,14 @@ void USART2_IRQHandler(void)
 		else
 		{
 			uart_buf[s_first_index] = res;  	  //½«½ÓÊÕµ½µÄ×Ö·û´®´æµ½»º´æÖĞ 
-			DEBUG_UART->DR = res;//½«½ÓÊÕµ½µÄÊı¾İ×ª·¢µ½µ÷ÊÔ´®¿Ú
+			if(!Task_Flag.Flag_Bit.Debug_Date)
+			{
+				DEBUG_UART->DR = res;//½«½ÓÊÕµ½µÄÊı¾İ×ª·¢µ½µ÷ÊÔ´®¿Ú
+			}
+			else
+			{
+				BLUETOOTH_USART->DR = res;//½«½ÓÊÕµ½µÄÊı¾İ×ª·¢µ½µ÷ÊÔ´®¿Ú
+			}
 			s_first_index++;                		//»º´æÖ¸ÕëÏòºóÒÆ¶¯
 			if(s_first_index >= (BUF_MAX-1))
 			{
@@ -321,6 +333,16 @@ static void query_uart_buf(uint8_t recv)
 				s_body_len	= sizeof(recived_buf)-1;
 			}
 			s_has_recived_len = 0;
+			clear_buf();
+		}
+		else if((qx_cnt=strstr(uart_buf,"SIM not"))!=NULL)
+		{
+			Play_voice(NO_SIM);
+			QXLOG("$NO SIM\r\n");//½«ÆäËûÊı¾İ·¢»Øµ½µ×°åÈ¥
+			clear_buf();
+		}
+		else if((qx_cnt=strstr(uart_buf,"ERROR"))!=NULL)
+		{
 			clear_buf();
 		}
 	}
@@ -549,7 +571,7 @@ int8_t wait_creg(void)
 	uint8_t k;
 	BOOL first_command = TRUE;
 	clear_buf();
-	QXLOG("×¢²áÖĞ.....");
+	QXLOG("reging.....");
   	while(i == 0)        			
 	{
 		clear_buf();  
@@ -605,14 +627,17 @@ static int8_t set_ate0(void)
 static int8_t init_gsm_gprs(void)
 {
 	int8_t ret = 0;
+	delay_ms(3000);  
+	ret = send_at_command("AT+CICCID","SIM not",3);
 	ret = wait_creg();
 	if(ret == 0)
 	{
-		QXLOG("×¢²áÍê³É.....\r\n");
+		QXLOG("reg successful.....\r\n");
 	}
 	else
 	{
-		QXLOG("×¢²áÊ§°Ü.....\r\n");
+		QXLOG("reg erro.....\r\n");
+		Play_voice(NET_ERRO);//×¢²á´íÎó
 		return -1;
 	}
 	if((ret = set_ate0()) != 0)//¹Ø±Õ»ØÏÔ
@@ -622,7 +647,7 @@ static int8_t init_gsm_gprs(void)
 //	send_at_command("AT+CREG=1","OK",3*AT_CMD_TIMEOUT);//¿ªÆôÏÔÊ¾ÍøÂç×¢²áµÈĞÅÏ¢
 	if((ret = send_at_command("AT+CGREG=1","OK",3*AT_CMD_TIMEOUT)) != 0) //ÉèÖÃGPRSÒÆ¶¯Ì¨Àà±ğÎªA,Ö§³Ö°ü½»»»ºÍÊı¾İ½»»» 
 	{
-		QXLOG("ÍøÂç×¢²áÊ§°Ü!\r\n");
+		QXLOG("net reg erro!\r\n");
 		return ret;
 	}		
 //	if((ret = send_at_command("AT+CGCLASS=\"A\"","OK",3*AT_CMD_TIMEOUT)) != 0) //ÉèÖÃGPRSÒÆ¶¯Ì¨Àà±ğÎªA,Ö§³Ö°ü½»»»ºÍÊı¾İ½»»» 
@@ -643,29 +668,29 @@ static int8_t init_gsm_gprs(void)
 	if((ret =send_at_command("AT+CGDCONT=1,\"IP\",\"CMNET\"","OK",3*AT_CMD_TIMEOUT)) != 0)
 	{
 		//ÉèÖÃPDPÉÏÏÂÎÄ,»¥ÁªÍø½ÓĞ­Òé,½ÓÈëµãµÈĞÅÏ¢
-		QXLOG("IPÉèÖÃ´íÎó!\r\n");
+		QXLOG("set ip erro!\r\n");
 		return ret;
 	}
 	if((ret = send_at_command("AT+CSOCKSETPN=1","OK",3*AT_CMD_TIMEOUT)) != 0) 
 	{
-		QXLOG("CSOCKSETPNÉèÖÃÊ§°Ü!\r\n");
+		QXLOG("set CSOCKSETPN erro!\r\n");
 		return ret;
 	}
 	if((ret = send_at_command("AT+CIPMODE=0","OK",3*AT_CMD_TIMEOUT)) != 0) 
 	{
 		//¸½×ÅGPRSÒµÎñ
-		QXLOG("Ä£Ê½ÉèÖÃÊ§°Ü!\r\n");
+		QXLOG("set model erro!\r\n");
 		return ret;
 	}
 	if((ret = send_at_command("AT+NETOPEN","OK",3*AT_CMD_TIMEOUT)) != 0) 
 	{
-		QXLOG("ÍøÂçÎ´´ò¿ª!\r\n");
+		QXLOG("net can not open!\r\n");
 		return ret;
 	}
 	if((ret = send_at_command("AT+CIPHEAD=1","OK",2*AT_CMD_TIMEOUT)) != 0) 
 	{
 		//ÉèÖÃ½ÓÊÕÊı¾İÏÔÊ¾IPÍ·(·½±ãÅĞ¶ÏÊı¾İÀ´Ô´,½öÔÚµ¥Â·Á¬½ÓÓĞĞ§)
-		QXLOG("ÉèÖÃIPÍ·Ê§°Ü!\r\n");
+		QXLOG("set ip head erro!\r\n");
 		return ret;
 	}
 	return ret;
@@ -709,7 +734,7 @@ static uint8_t gsm_ack_exception(void)
 	}
 	if(ret != 0)
 	{
-		QXLOG("GSMÄ£¿é³õÊ¼»¯Ê§°Ü=%d....\r\n",ret);
+		QXLOG("GSM init erro=%d....\r\n",ret);
 	}
 	return ret;
 }

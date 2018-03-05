@@ -22,7 +22,7 @@
 #define FALSE 0
 
 /***SPI…Ë±∏—°‘Ò****/
-//#define SPI1_PERIPH
+#define SPI1_PERIPH
 //#define SPI2_PERIPH
 //#define SPI3_PERIPH
 /*********************/

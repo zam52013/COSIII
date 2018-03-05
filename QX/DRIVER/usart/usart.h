@@ -19,6 +19,7 @@
 #include <stdio.h>
 #include <string.h>
 
+
 #define SYSTEM_SUPPORT_OS_II		//支持操作系统
 
 #define TRUE 1
@@ -29,15 +30,19 @@
 #define USINGE_USART1
 #define USINGE_USART2
 #define USINGE_USART3
-#define USINGE_UART4
-#define USINGE_UART5
+//#define USINGE_UART4
+//#define USINGE_UART5
 /***************************/
 
 
 /************定义调试端口****************/
-#define DEBUG_UART UART5
+#define DEBUG_PERPH
+#define DEBUG_UART USART3
 /***************************************/
 
+/************定义发送到底板的串口****************/
+#define CONNECT_TO_NOVAL USART3
+/***************************************/
 
 /******DMA使用********/
 //#define USINGE_USART1_DMA_T
@@ -52,6 +57,7 @@
 //#define USINGE_UART4_DMA_T
 //#define USINGE_UART4_DMA_R
 /***************************/
+
 
 /******缓存大小********/
 #define Usart_size 512
@@ -94,7 +100,7 @@
 }
 #define SERIAL_CONFIG_2														\
 {																									\
-	BAUD_RATE_115200,	/* 115200 bits/s */						\
+	BAUD_RATE_9600,	/* 115200 bits/s */						\
 	USART_WordLength_8b,/* 8 databits */ 						\
 	USART_StopBits_1,		/* 1 stopbit */							\
 	USART_Parity_No,		/* No parity  */						\
@@ -264,6 +270,8 @@ extern unsigned char USE_USART;
 #ifdef USINGE_UART5
 	extern struct usart_messg UART5_MESSG;
 #endif
+
+
 
 void Usart_init(void);
 void UART_SendString(USART_TypeDef* USARTx,char* s);

@@ -1,5 +1,5 @@
 .\objects\sim7600.o: ..\HARDWARE\SIM7600\sim7600.c
-.\objects\sim7600.o: ..\HARDWARE\SIM7600\sim7600.h
+.\objects\sim7600.o: ..\HARDWARE\sim7600.h
 .\objects\sim7600.o: ..\CORE\stm32f10x.h
 .\objects\sim7600.o: ..\CORE\core_cm3.h
 .\objects\sim7600.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h

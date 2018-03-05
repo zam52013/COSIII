@@ -317,10 +317,10 @@ ARM Macro Assembler    Page 5
               00000000 
               00000000 
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\object
-s\os_cpu_a.d -o.\objects\os_cpu_a.o -IF:\RTK-NET\易飞行-千寻\PROJECT\RTE -Id:\K
-eil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include -Id:\Keil_v5\ARM\CMSIS\
-Include --predefine="STM32F10X_HD SETA 1" --list=.\listings\os_cpu_a.lst ..\UCO
-SII\PORT\os_cpu_a.asm
+s\os_cpu_a.d -o.\objects\os_cpu_a.o -IF:\易飞行-千寻\PROJECT\RTE -Id:\Keil_v5\A
+RM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include -Id:\Keil_v5\ARM\CMSIS\Include 
+--predefine="STM32F10X_HD SETA 1" --list=.\listings\os_cpu_a.lst ..\UCOSII\PORT
+\os_cpu_a.asm
 
 
 

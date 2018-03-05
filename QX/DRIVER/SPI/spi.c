@@ -12,7 +12,7 @@
  * 2017-09-28     Bernard      the first version
  */
  #include "spi.h"
- 
+ #include "usart.h"
  static void spi_rcc_init(void)
  {
 	#ifdef SPI1_PERIPH
@@ -99,6 +99,17 @@
 		SPI_InitStructure.SPI_CRCPolynomial = 7;//7Œª—≠ª∑»ﬂ”‡º∆À„
 		SPI_Init(SPI3,&SPI_InitStructure);
 		SPI_Cmd(SPI3,ENABLE);
+	#endif
+	#ifdef DEBUG_PERPH
+		#ifdef SPI1_PERIPH
+			printf("spi1 open!\r\n");
+		#endif
+		#ifdef SPI2_PERIPH
+			printf("spi1 open!\r\n");
+		#endif
+		#ifdef SPI3_PERIPH
+			printf("spi1 open!\r\n");
+		#endif
 	#endif
  }
 

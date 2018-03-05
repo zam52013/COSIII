@@ -1,5 +1,5 @@
 .\objects\ef_qx.o: ..\HARDWARE\QX\ef_qx.c
-.\objects\ef_qx.o: ..\HARDWARE\QX\ef_qx.h
+.\objects\ef_qx.o: ..\HARDWARE\ef_qx.h
 .\objects\ef_qx.o: ..\RTCM\socket.h
 .\objects\ef_qx.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\ef_qx.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
@@ -46,4 +46,13 @@
 .\objects\ef_qx.o: ..\UCOSII\CONFIG\os_cfg.h
 .\objects\ef_qx.o: ..\RTCM\qxwz_rtcm.h
 .\objects\ef_qx.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\objects\ef_qx.o: ..\HARDWARE\bluetooth.h
+.\objects\ef_qx.o: ..\HARDWARE\wt5883.h
+.\objects\ef_qx.o: ..\HARDWARE\key_pow.h
+.\objects\ef_qx.o: ..\DRIVER\AD\ad.h
+.\objects\ef_qx.o: ..\DRIVER\SPI\spi.h
+.\objects\ef_qx.o: ..\HARDWARE\fm25v01.h
+.\objects\ef_qx.o: ..\HARDWARE\sim7600.h
+.\objects\ef_qx.o: ..\HARDWARE\ef_qx.h
+.\objects\ef_qx.o: ..\HARDWARE\led.h
 .\objects\ef_qx.o: ..\RTCM\prefs.h

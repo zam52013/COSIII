@@ -12,7 +12,7 @@
  * 2017-09-28     Bernard      the first version
  */
  #include "fm25v01.h"
-
+ #include "usart.h"
  void fm25v_init()
  {
  	GPIO_InitTypeDef GPIO_InitStructure;
@@ -21,6 +21,9 @@
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_Out_PP;  //∏¥”√Õ∆ÕÏ ‰≥ˆ
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 	GPIO_Init(FM25V_PORT, &GPIO_InitStructure);	
+	#ifdef DEBUG_PERPH
+	printf("Fram open!\r\n");
+	#endif
  }
  void Fram_wirte(u16 addr,u16 lenth,u8 *date)	
  {

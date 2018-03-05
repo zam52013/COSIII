@@ -13,6 +13,7 @@
  */
  
  #include "sim7600.h"
+ #include "usart.h"
 
  void Sim_contro(void)
  {
@@ -38,6 +39,9 @@
 		GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;
 		GPIO_Init(SIM_POWKEY_PORT, &GPIO_InitStructure);
 		SIM_POWKEY_ON;
+		#ifdef DEBUG_PERPH
+		printf("sim7600 open!\r\n");
+		#endif
 // 		SIM_POWKEY_OFF;
  }
  

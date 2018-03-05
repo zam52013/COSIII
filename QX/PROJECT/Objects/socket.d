@@ -45,6 +45,14 @@
 .\objects\socket.o: ..\UCOSII\CONFIG\os_cfg.h
 .\objects\socket.o: ..\RTCM\qxwz_rtcm.h
 .\objects\socket.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\time.h
+.\objects\socket.o: ..\HARDWARE\bluetooth.h
+.\objects\socket.o: ..\HARDWARE\wt5883.h
+.\objects\socket.o: ..\HARDWARE\key_pow.h
+.\objects\socket.o: ..\DRIVER\AD\ad.h
+.\objects\socket.o: ..\DRIVER\SPI\spi.h
+.\objects\socket.o: ..\HARDWARE\fm25v01.h
+.\objects\socket.o: ..\HARDWARE\sim7600.h
+.\objects\socket.o: ..\HARDWARE\ef_qx.h
+.\objects\socket.o: ..\MAIN\main.h
 .\objects\socket.o: ..\RTCM\prefs.h
-.\objects\socket.o: ..\HARDWARE\QX\ef_qx.h
-.\objects\socket.o: ..\HARDWARE\SIM7600\sim7600.h
+.\objects\socket.o: ..\HARDWARE\led.h

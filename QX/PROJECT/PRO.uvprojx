@@ -365,7 +365,7 @@
               <MiscControls></MiscControls>
               <Define>USE_STDPERIPH_DRIVER</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\DRIVER\delay;..\DRIVER\usart;..\HARDWARE\LED;..\HARDWARE\QX;..\MAIN;..\RTCM;..\STM32F10x_StdPeriph_Driver\inc;..\UCOSII\CONFIG;..\UCOSII\CORE;..\UCOSII\PORT;..\HARDWARE\SIM7600;..\DRIVER\sys;..\DRIVER\TIMER</IncludePath>
+              <IncludePath>..\CORE;..\DRIVER\delay;..\DRIVER\usart;..\HARDWARE;..\MAIN;..\RTCM;..\STM32F10x_StdPeriph_Driver\inc;..\UCOSII\CONFIG;..\UCOSII\CORE;..\UCOSII\PORT;..\DRIVER\sys;..\DRIVER\TIMER;..\DRIVER\AD;..\DRIVER\SPI</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -448,6 +448,16 @@
               <FileType>1</FileType>
               <FilePath>..\DRIVER\sys\sys.c</FilePath>
             </File>
+            <File>
+              <FileName>ad.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DRIVER\AD\ad.c</FilePath>
+            </File>
+            <File>
+              <FileName>spi.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\DRIVER\SPI\spi.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -472,6 +482,26 @@
               <FileName>ef_qx.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\QX\ef_qx.c</FilePath>
+            </File>
+            <File>
+              <FileName>bluetooth.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\BLUETOOTH\bluetooth.c</FilePath>
+            </File>
+            <File>
+              <FileName>fm25v01.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\FM25V01\fm25v01.c</FilePath>
+            </File>
+            <File>
+              <FileName>key_pow.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\KEY_POW\key_pow.c</FilePath>
+            </File>
+            <File>
+              <FileName>wt5883.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\WT5883\wt5883.c</FilePath>
             </File>
           </Files>
         </Group>

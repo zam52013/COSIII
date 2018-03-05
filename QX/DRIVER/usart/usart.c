@@ -17,6 +17,9 @@
 #ifdef SYSTEM_SUPPORT_OS_II
 #include "includes.h"					//ucos 使用	  
 #endif
+#include "bluetooth.h"
+#include "main.h"
+
 #ifdef USINGE_USART1_DMA_R
 	 char USART1_RECEIVE_DATA[Usart_size];
 #endif
@@ -60,7 +63,7 @@
 
 
 #if 1
-unsigned char USE_USART=0;
+
 #pragma import(__use_no_semihosting)             
 //标准库需要的支持函数                 
 struct __FILE 
@@ -76,9 +79,17 @@ _sys_exit(int x)
 } 
 //重定义fputc函数 
 int fputc(int ch, FILE *f)
-{      
-	while((DEBUG_UART->SR&0X40)==0);//循环发送,直到发送完毕   
-    DEBUG_UART->DR = (u8) ch;      
+{     
+	if(!Task_Flag.Flag_Bit.Debug_Date)
+	{
+		while((DEBUG_UART->SR&0X40)==0);//循环发送,直到发送完毕   
+    	DEBUG_UART->DR = (u8) ch;      
+	}
+	else
+	{
+		while((BLUETOOTH_USART->SR&0X40)==0);//循环发送,直到发送完毕   
+    	BLUETOOTH_USART->DR = (u8) ch;     
+	}
 	return ch;
 }
 #endif
@@ -502,6 +513,7 @@ static void Dma_init(void)
 		}
 	#endif
 }
+/*
 #ifdef USINGE_USART1
 	void USART1_IRQHandler(void)
 	{
@@ -617,6 +629,7 @@ static void Dma_init(void)
 	}
 
 #endif
+*/
 /*#ifdef USINGE_USART2
 
 	void USART2_IRQHandler(void)
@@ -736,6 +749,8 @@ static void Dma_init(void)
 	}
 #endif
 
+
+/*
 #ifdef USINGE_USART3
 	void USART3_IRQHandler(void)
 	{
@@ -744,6 +759,10 @@ static void Dma_init(void)
 			static unsigned char statu=0;
 		#else
 			u8 RES;
+		#endif
+		
+#ifdef SUPPORT_OS_FLAG
+		INT8U  err = 0; 
 		#endif
 		#ifdef SYSTEM_SUPPORT_OS_II
 			OSIntEnter();
@@ -819,7 +838,7 @@ static void Dma_init(void)
 			OSIntExit();
 		#endif
 	}
-#endif
+#endif*/
 #ifdef USINGE_USART3_DMA_R
 	void DMA1_Channel3_IRQHandler(void)
 	{
@@ -987,5 +1006,46 @@ void Usart_init(void)
 	Usat_rcc_init();
 	Usart_io_init();
 	Dma_init();
+	#ifdef DEBUG_PERPH
+		#ifdef USINGE_USART1
+		printf("usart1 open!\r\n");
+		#endif
+		#ifdef USINGE_USART2
+		printf("usart2 open!\r\n");
+		#endif
+		#ifdef USINGE_USART3
+		printf("usart3 open!\r\n");
+		#endif
+		#ifdef USINGE_UART4
+		printf("uart4 open!\r\n");
+		#endif
+		#ifdef USINGE_UART5
+		printf("uart5 open!\r\n");
+		#endif
+		#ifdef USINGE_USART1_DMA_T
+		printf("usart1 dma_t open!\r\n");
+		#endif
+		#ifdef USINGE_USART1_DMA_R
+		printf("usart1 dma_r open!\r\n");
+		#endif
+		#ifdef USINGE_USART2_DMA_T
+		printf("usart2 dma_t open!\r\n");
+		#endif
+		#ifdef USINGE_USART2_DMA_R
+		printf("usart2 dma_r open!\r\n");
+		#endif
+		#ifdef USINGE_USART3_DMA_T
+		printf("usart3 dma_t open!\r\n");
+		#endif
+		#ifdef USINGE_USART3_DMA_R
+		printf("usart3 dma_r open!\r\n");
+		#endif
+		#ifdef USINGE_UART4_DMA_T
+		printf("uart4 dma_t open!\r\n");
+		#endif
+		#ifdef USINGE_UART4_DMA_R
+		printf("uart4 dma_r open!\r\n");
+		#endif
+	#endif
 }
 
