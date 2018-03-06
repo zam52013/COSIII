@@ -1,0 +1,219 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Project:</h2>
+F:\wif\ucosIII\PROJECT\QX.uvproj
+Project File Date:  01/23/2018
+
+<h2>Output:</h2>
+Build target 'QX'
+compiling iic.c...
+linking...
+Program Size: Code=54336 RO-data=5744 RW-data=296 ZI-data=42704  
+"..\OBJ\QX.axf" - 0 Error(s), 0 Warning(s).
+Load "..\\OBJ\\QX.axf" 
+Set JLink Project File to "F:\wif\ucosIII\PROJECT\JLinkSettings.ini"
+* JLink Info: Device "STM32F103ZE" selected (512 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103ZE
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+</pre>
+</body>
+</html>
+03
+ 
+Target info:
+------------
+Device: STM32F103ZE
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+s declared but never referenced
+        NVIC_InitTypeDef NVIC_InitStructure;
+..\DRIVERS\UART\usart.c: 2 warnings, 0 errors
+compiling led.c...
+..\MODULES\LED\led.c(109): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_POW,!GPIO_ReadOutputDataBit(LED_PORT,LED_POW));
+..\MODULES\LED\led.c(112): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_RED,!GPIO_ReadOutputDataBit(LED_PORT,LED_RED));
+..\MODULES\LED\led.c(115): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_ST,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST));
+..\MODULES\LED\led.c(118): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_ST1,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST1));
+..\MODULES\LED\led.c(121): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_ST2,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST2));
+..\MODULES\LED\led.c: 5 warnings, 0 errors
+compiling wifi_esp.c...
+linking...
+Program Size: Code=54372 RO-data=5744 RW-data=296 ZI-data=42704  
+"..\OBJ\QX.axf" - 0 Error(s), 11 Warning(s).
+Load "..\\OBJ\\QX.axf" 
+Set JLink Project File to "F:\wif\ucosIII\PROJECT\JLinkSettings.ini"
+* JLink Info: Device "STM32F103ZE" selected (512 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103ZE
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+und SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103ZE
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 0
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...
+ mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_ST1,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST1));
+..\MODULES\LED\led.c(121): warning:  #188-D: enumerated type mixed with another type
+                GPIO_WriteBit(LED_PORT, LED_ST2,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST2));
+..\MODULES\LED\led.c: 5 warnings, 0 errors
+compiling mpu9250.c...
+compiling sim7600.c...
+..\MODULES\SIM7600\sim7600.c(79): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
+                        if(strstr(SIM_Mess.messg_buff,reply1) != NULL)
+..\MODULES\SIM7600\sim7600.c: 1 warning, 0 errors
+compiling tca62724.c...
+..\MODULES\tca62724.h(75): warning:  #1-D: last line of file ends without a newline
+        
+..\MODULES\TCA62724\tca62724.c(21): warning:  #177-D: function "Send_Led_IIC_Write" was declared but never referenced
+   static unsigned char Send_Led_IIC_Write(unsigned char* buf,  uint32_t nbyte, uint8_t SlaveAddress)
+..\MODULES\TCA62724\tca62724.c: 2 warnings, 0 errors
+compiling wifi_esp.c...
+compiling stm32_eval_spi_sd.c...
+compiling usb_core.c...
+compiling usb_init.c...
+compiling usb_int.c...
+compiling usb_mem.c...
+compiling usb_regs.c...
+compiling usb_sil.c...
+compiling hw_config.c...
+compiling mass_mal.c...
+compiling memory.c...
+compiling usb_bot.c...
+compiling usb_desc.c...
+compiling usb_endp.c...
+compiling usb_istr.c...
+compiling usb_prop.c...
+compiling usb_pwr.c...
+compiling usb_scsi.c...
+compiling stm3210b_eval.c...
+compiling scsi_data.c...
+linking...
+Program Size: Code=54336 RO-data=5744 RW-data=296 ZI-data=42704  
+"..\OBJ\QX.axf" - 0 Error(s), 19 Warning(s).
+Load "..\\OBJ\\QX.axf" 
+Set JLink Project File to "F:\wif\ucosIII\PROJECT\JLinkSettings.ini"
+* JLink Info: Device "STM32F103ZE" selected (512 KB flash, 64 KB RAM).
+ 
+JLink info:
+------------
+DLL: V4.80g, compiled Feb 13 2014 20:50:02
+Firmware: J-Link ARM V8 compiled Jan 31 2018 18:34:52
+Hardware: V8.00
+S/N : 20080643 
+Feature(s) : RDI,FlashDL,FlashBP,JFlash,GDBFull 
+ 
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found SWD-DP with ID 0x1BA01477
+* JLink Info: Found Cortex-M3 r1p1, Little endian.
+* JLink Info: FPUnit: 6 code (BP) slots and 2 literal slots
+* JLink Info: TPIU fitted.
+* JLink Info: ETM fitted.
+ROMTableAddr = 0xE00FF003
+ 
+Target info:
+------------
+Device: STM32F103ZE
+VTarget = 3.280V
+State of Pins: 
+TCK: 0, TDI: 0, TDO: 0, TMS: 0, TRES: 1, TRST: 1
+Hardware-Breakpoints: 6
+Software-Breakpoints: 8192
+Watchpoints:          4
+JTAG speed: 2000 kHz
+ 
+Erase Done.
+Programming Done.
+Verify OK.
+Application running ...

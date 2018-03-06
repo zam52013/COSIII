@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\APP -I..\CORE -I..\MAIN -I..\STM32F10x_StdPeriph_Driver\inc -I..\uCOS-III\uC-CPU -I..\uCOS-III\uC-LIB -I..\uCOS-III\uCOS-III -I..\DRIVERS -I..\LIBRRARY -I..\MODULES -I..\STM32F10x_USB_Driver\inc -I..\USB_Periph\inc 
+-I d:\Keil\ARM\RV31\INC 
+-I d:\Keil\ARM\CMSIS\Include 
+-I d:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -o "..\OBJ\usb_cfg.o" --omf_browse "..\OBJ\usb_cfg.crf" --depend "..\OBJ\usb_cfg.d" "..\USB_Periph\src\usb_cfg.c"

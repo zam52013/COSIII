@@ -1,0 +1,16 @@
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os_cfg_app.c
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os_cfg_app.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os_cfg.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-CPU\cpu.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-CPU\cpu_def.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-CPU\cpu_cfg.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-CPU\cpu_core.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-LIB\lib_def.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-LIB\lib_mem.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-CPU\cpu_core.h
+..\OBJ\os_cfg_app.o: ..\APP\app_cfg.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-LIB\lib_str.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uC-LIB\lib_ascii.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os_type.h
+..\OBJ\os_cfg_app.o: ..\uCOS-III\uCOS-III\os_cpu.h

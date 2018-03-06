@@ -1,0 +1,5 @@
+-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\APP -I..\CORE -I..\MAIN -I..\STM32F10x_StdPeriph_Driver\inc -I..\uCOS-III\uC-CPU -I..\uCOS-III\uC-LIB -I..\uCOS-III\uCOS-III -I..\DRIVERS -I..\LIBRRARY -I..\MODULES -I..\STM32_USB-FS-Device_Driver\inc -I..\STM32_USB-Driver\inc 
+-I d:\Keil\ARM\RV31\INC 
+-I d:\Keil\ARM\CMSIS\Include 
+-I d:\Keil\ARM\Inc\ST\STM32F10x 
+-DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER -DUSE_STM3210B_EVAL -DUSE_SPI_SD -o "..\OBJ\os_pend_multi.o" --omf_browse "..\OBJ\os_pend_multi.crf" --depend "..\OBJ\os_pend_multi.d" "..\uCOS-III\uCOS-III\os_pend_multi.c"
