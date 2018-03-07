@@ -462,10 +462,11 @@ ARM Macro Assembler    Page 8
   293 00000034         
   294 00000034                 END
 Command Line: --debug --xref --cpu=Cortex-M3 --apcs=interwork --depend=.\object
-s\cpu_a.d -o.\objects\cpu_a.o -IC:\Users\zhangaiming\Desktop\ucosIII\PROJECT\RT
-E -Id:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include -Id:\Keil_v5\AR
-M\CMSIS\Include --predefine="STM32F10X_HD SETA 1" --list=.\listings\cpu_a.lst .
-.\uCOS-III\uC-CPU\cpu_a.s
+s\cpu_a.d -o.\objects\cpu_a.o -IF:\uCOSiii-Perph\COSIII\ucosIII\PROJECT\RTE -ID
+:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0 -ID:\Keil_v5\ARM\CMSIS\Include -ID:
+\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include --predefine="__UVISIO
+N_VERSION SETA 513" --predefine="STM32F10X_HD SETA 1" --list=.\listings\cpu_a.l
+st ..\uCOS-III\uC-CPU\cpu_a.s
 
 
 
@@ -559,4 +560,4 @@ Symbol: CPU_WaitForInt
       At line 44 in file ..\uCOS-III\uC-CPU\cpu_a.s
 Comment: CPU_WaitForInt used once
 10 symbols
-341 symbols in table
+342 symbols in table

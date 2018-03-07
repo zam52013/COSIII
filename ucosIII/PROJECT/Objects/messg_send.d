@@ -2,7 +2,7 @@
 .\objects\messg_send.o: ..\LIBRRARY\messg_send.h
 .\objects\messg_send.o: ..\CORE\stm32f10x.h
 .\objects\messg_send.o: ..\CORE\core_cm3.h
-.\objects\messg_send.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\messg_send.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\messg_send.o: ..\CORE\system_stm32f10x.h
 .\objects\messg_send.o: ..\CORE\stm32f10x_conf.h
 .\objects\messg_send.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

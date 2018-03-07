@@ -2,7 +2,7 @@
 .\objects\dht11.o: ..\MODULES\dht11.h
 .\objects\dht11.o: ..\CORE\stm32f10x.h
 .\objects\dht11.o: ..\CORE\core_cm3.h
-.\objects\dht11.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\dht11.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\dht11.o: ..\CORE\system_stm32f10x.h
 .\objects\dht11.o: ..\CORE\stm32f10x_conf.h
 .\objects\dht11.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -31,6 +31,6 @@
 .\objects\dht11.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\dht11.o: ..\DRIVERS\delay.h
 .\objects\dht11.o: ..\DRIVERS\usart.h
-.\objects\dht11.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\dht11.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\dht11.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\dht11.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\dht11.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\dht11.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

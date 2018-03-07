@@ -2,7 +2,7 @@
 .\objects\iic.o: ..\DRIVERS\iic.h
 .\objects\iic.o: ..\CORE\stm32f10x.h
 .\objects\iic.o: ..\CORE\core_cm3.h
-.\objects\iic.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\iic.o: ..\CORE\system_stm32f10x.h
 .\objects\iic.o: ..\CORE\stm32f10x_conf.h
 .\objects\iic.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,7 +30,7 @@
 .\objects\iic.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\iic.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\iic.o: ..\DRIVERS\usart.h
-.\objects\iic.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\iic.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\iic.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\iic.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\iic.o: ..\DRIVERS\delay.h

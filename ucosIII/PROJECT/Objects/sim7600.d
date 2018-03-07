@@ -2,7 +2,7 @@
 .\objects\sim7600.o: ..\MODULES\sim7600.h
 .\objects\sim7600.o: ..\CORE\stm32f10x.h
 .\objects\sim7600.o: ..\CORE\core_cm3.h
-.\objects\sim7600.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\sim7600.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\sim7600.o: ..\CORE\system_stm32f10x.h
 .\objects\sim7600.o: ..\CORE\stm32f10x_conf.h
 .\objects\sim7600.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,7 +30,7 @@
 .\objects\sim7600.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\sim7600.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\sim7600.o: ..\DRIVERS\usart.h
-.\objects\sim7600.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\sim7600.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\sim7600.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\sim7600.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\sim7600.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\sim7600.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\sim7600.o: ..\DRIVERS\delay.h

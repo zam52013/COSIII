@@ -2,7 +2,7 @@
 .\objects\fast_copy.o: ..\LIBRRARY\fast_copy.h
 .\objects\fast_copy.o: ..\CORE\stm32f10x.h
 .\objects\fast_copy.o: ..\CORE\core_cm3.h
-.\objects\fast_copy.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fast_copy.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\fast_copy.o: ..\CORE\system_stm32f10x.h
 .\objects\fast_copy.o: ..\CORE\stm32f10x_conf.h
 .\objects\fast_copy.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

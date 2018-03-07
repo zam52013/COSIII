@@ -30,6 +30,7 @@
  #include "delay.h"
  #include "iic.h"
  #include "can.h"
+ #include "da.h"
  #ifdef USE_SDIO_SD
  #include "stm32_eval_sdio_sd.h"
  #endif

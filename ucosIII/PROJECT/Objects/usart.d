@@ -2,7 +2,7 @@
 .\objects\usart.o: ..\DRIVERS\usart.h
 .\objects\usart.o: ..\CORE\stm32f10x.h
 .\objects\usart.o: ..\CORE\core_cm3.h
-.\objects\usart.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usart.o: ..\CORE\system_stm32f10x.h
 .\objects\usart.o: ..\CORE\stm32f10x_conf.h
 .\objects\usart.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -29,9 +29,9 @@
 .\objects\usart.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\usart.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\usart.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
-.\objects\usart.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\usart.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\usart.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\usart.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\usart.o: ..\APP\App.h
 .\objects\usart.o: ..\uCOS-III\uCOS-III\os.h
 .\objects\usart.o: ..\uCOS-III\uCOS-III\os_cfg.h

@@ -13,7 +13,8 @@
  */
  #include "da.h"
  #include "usart.h"
- 
+
+ #ifdef SinWAVE
  /* Private typedef -----------------------------------------------------------*/
 /* Private define ------------------------------------------------------------*/
 #define DAC_DHR12RD_Address      0x40007420
@@ -27,9 +28,9 @@ const uint16_t Sine12bit[32] = {
                       2047, 2447, 2831, 3185, 3498, 3750, 3939, 4056, 4095, 4056,
                       3939, 3750, 3495, 3185, 2831, 2447, 2047, 1647, 1263, 909, 
                       599, 344, 155, 38, 0, 38, 155, 344, 599, 909, 1263, 1647};
-
+/* Private variables -三角信号参数表--------------------------------------------------------*/
 uint32_t DualSine12bit[32];
-											
+#endif											
 /***********DA端口配置表******************/
 const uint32_t DA_IO_CONFIG[3][3]={
 		{RCC_APB2Periph_GPIOA,GPIO_Pin_4,POARTA},
@@ -47,7 +48,9 @@ const uint32_t DA_IO_CONFIG[3][3]={
 ********************************************************************/									
  void DA_RCC_Configuration(void)
  {
-		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA1, ENABLE);
+ 	#ifdef SinWAVE
+		RCC_AHBPeriphClockCmd(RCC_AHBPeriph_DMA2, ENABLE);
+	#endif
 		/* DAC Periph clock enable */
 		RCC_APB1PeriphClockCmd(RCC_APB1Periph_DAC, ENABLE);
 		/* TIM2 Periph clock enable */
@@ -103,6 +106,7 @@ const uint32_t DA_IO_CONFIG[3][3]={
 				}
 			}
 		}
+		#ifdef SinWAVE
 		TIM_TimeBaseStructInit(&TIM_TimeBaseStructure); 
 		TIM_TimeBaseStructure.TIM_Period = 0x19;          
 		TIM_TimeBaseStructure.TIM_Prescaler = 0x0;       
@@ -110,10 +114,20 @@ const uint32_t DA_IO_CONFIG[3][3]={
 		TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
 		TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
 		TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
-
+		#endif
+		#ifdef TriangelWAVE
+ 		TIM_TimeBaseStructInit(&TIM_TimeBaseStructure);
+  		TIM_TimeBaseStructure.TIM_Period = 0xF;          
+  		TIM_TimeBaseStructure.TIM_Prescaler = 0xF;       
+  		TIM_TimeBaseStructure.TIM_ClockDivision = 0x0;    
+  		TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up;  
+  		TIM_TimeBaseInit(TIM2, &TIM_TimeBaseStructure);
+		TIM_SelectOutputTrigger(TIM2, TIM_TRGOSource_Update);
+		#endif
+		#ifdef SinWAVE
 		/* DAC channel1 Configuration */
 		DAC_InitStructure.DAC_Trigger = DAC_Trigger_T2_TRGO;
-		DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_None;
+		DAC_InitStructure.DAC_WaveGeneration =DAC_WaveGeneration_None;
 		DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Disable;
 		DAC_Init(DAC_Channel_1, &DAC_InitStructure);
 
@@ -127,7 +141,7 @@ const uint32_t DA_IO_CONFIG[3][3]={
 		}
 
 		/* DMA1 channel4 configuration */
-		DMA_DeInit(DMA1_Channel4);
+		DMA_DeInit(DMA2_Channel4);
 
 		DMA_InitStructure.DMA_PeripheralBaseAddr = DAC_DHR12RD_Address;
 		DMA_InitStructure.DMA_MemoryBaseAddr = (uint32_t)&DualSine12bit;
@@ -141,19 +155,46 @@ const uint32_t DA_IO_CONFIG[3][3]={
 		DMA_InitStructure.DMA_Priority = DMA_Priority_High;
 		DMA_InitStructure.DMA_M2M = DMA_M2M_Disable;
 
-		DMA_Init(DMA1_Channel4, &DMA_InitStructure);
+		DMA_Init(DMA2_Channel4, &DMA_InitStructure);
 		/* Enable DMA1 Channel4 */
-		DMA_Cmd(DMA1_Channel4, ENABLE);
+		DMA_Cmd(DMA2_Channel4, ENABLE);
 		/* Enable DAC Channel1: Once the DAC channel1 is enabled, PA.04 is 
 			 automatically connected to the DAC converter. */
 		DAC_Cmd(DAC_Channel_1, ENABLE);
 		/* Enable DAC Channel2: Once the DAC channel2 is enabled, PA.05 is 
 			 automatically connected to the DAC converter. */
 		DAC_Cmd(DAC_Channel_2, ENABLE);
+		DAC_SetChannel1Data(DAC_Align_12b_R, 0);
 		/* Enable DMA for DAC Channel2 */
 		DAC_DMACmd(DAC_Channel_2, ENABLE);
 		/* TIM2 enable counter */
 		TIM_Cmd(TIM2, ENABLE);
+		#endif
+		#ifdef TriangelWAVE
+		DAC_InitStructure.DAC_Trigger = DAC_Trigger_T2_TRGO;
+		 DAC_InitStructure.DAC_WaveGeneration = DAC_WaveGeneration_Triangle;
+		 DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude = DAC_TriangleAmplitude_2047;
+		 DAC_InitStructure.DAC_OutputBuffer = DAC_OutputBuffer_Disable;
+		 DAC_Init(DAC_Channel_1, &DAC_InitStructure);
+		
+		 /* DAC channel2 Configuration */
+		 DAC_InitStructure.DAC_LFSRUnmask_TriangleAmplitude = DAC_TriangleAmplitude_1023;
+		 DAC_Init(DAC_Channel_2, &DAC_InitStructure);
+		
+		 /* Enable DAC Channel1: Once the DAC channel1 is enabled, PA.04 is 
+			automatically connected to the DAC converter. */
+		 DAC_Cmd(DAC_Channel_1, ENABLE);
+		
+		 /* Enable DAC Channel2: Once the DAC channel2 is enabled, PA.05 is 
+			automatically connected to the DAC converter. */
+		 DAC_Cmd(DAC_Channel_2, ENABLE);
+		
+		 /* Set DAC dual channel DHR12RD register */
+		 DAC_SetDualChannelData(DAC_Align_12b_R, 0x100, 0x100);
+		
+		 /* TIM2 enable counter */
+		 TIM_Cmd(TIM2, ENABLE);
+		 #endif
 }
 
 void DA_Init()

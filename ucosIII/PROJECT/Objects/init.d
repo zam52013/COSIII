@@ -2,7 +2,7 @@
 .\objects\init.o: ..\DRIVERS\init.h
 .\objects\init.o: ..\CORE\stm32f10x.h
 .\objects\init.o: ..\CORE\core_cm3.h
-.\objects\init.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\init.o: ..\CORE\system_stm32f10x.h
 .\objects\init.o: ..\CORE\stm32f10x_conf.h
 .\objects\init.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -44,6 +44,6 @@
 .\objects\init.o: ..\uCOS-III\uCOS-III\os_type.h
 .\objects\init.o: ..\uCOS-III\uCOS-III\os_cpu.h
 .\objects\init.o: ..\DRIVERS\usart.h
-.\objects\init.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\init.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\init.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\init.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

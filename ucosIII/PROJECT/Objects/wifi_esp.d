@@ -2,7 +2,7 @@
 .\objects\wifi_esp.o: ..\MODULES\wifi_esp.h
 .\objects\wifi_esp.o: ..\CORE\stm32f10x.h
 .\objects\wifi_esp.o: ..\CORE\core_cm3.h
-.\objects\wifi_esp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\wifi_esp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\wifi_esp.o: ..\CORE\system_stm32f10x.h
 .\objects\wifi_esp.o: ..\CORE\stm32f10x_conf.h
 .\objects\wifi_esp.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,9 +30,9 @@
 .\objects\wifi_esp.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\wifi_esp.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\wifi_esp.o: ..\DRIVERS\usart.h
-.\objects\wifi_esp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\wifi_esp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\wifi_esp.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\wifi_esp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\wifi_esp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\wifi_esp.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\wifi_esp.o: ..\DRIVERS\delay.h
 .\objects\wifi_esp.o: ..\APP\app.h
 .\objects\wifi_esp.o: ..\uCOS-III\uCOS-III\os.h

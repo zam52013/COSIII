@@ -133,8 +133,10 @@ static void Init_Task(void *p_arg)
 	Led_Init();
 //	Wifi_Init();
 	DHT11_Init();
-	SD_Init();
 	SD_DeInit();
+	SD_Init();
+	
+	DA_Init();
 	 //Sim_contro();
 
 	//Set_System();

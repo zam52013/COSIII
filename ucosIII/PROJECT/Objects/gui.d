@@ -2,7 +2,7 @@
 .\objects\gui.o: ..\LIBRRARY\GUI.h
 .\objects\gui.o: ..\CORE\stm32f10x.h
 .\objects\gui.o: ..\CORE\core_cm3.h
-.\objects\gui.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\gui.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\gui.o: ..\CORE\system_stm32f10x.h
 .\objects\gui.o: ..\CORE\stm32f10x_conf.h
 .\objects\gui.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,7 +30,7 @@
 .\objects\gui.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\gui.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\gui.o: ..\MODULES\Lcd_Driver.h
-.\objects\gui.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\gui.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\gui.o: ..\DRIVERS\delay.h
 .\objects\gui.o: ..\LIBRRARY\font.h
-.\objects\gui.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\gui.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

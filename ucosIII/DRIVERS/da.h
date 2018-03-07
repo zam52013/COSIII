@@ -15,6 +15,8 @@
  #define __DA_H
  
  #include "stm32f10x.h"
+ //#define TriangelWAVE
+ #define SinWAVE
   /***************************/
  #define POARTA  1
  #define POARTB  2
