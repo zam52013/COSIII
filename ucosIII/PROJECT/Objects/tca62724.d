@@ -2,7 +2,7 @@
 .\objects\tca62724.o: ..\MODULES\tca62724.h
 .\objects\tca62724.o: ..\CORE\stm32f10x.h
 .\objects\tca62724.o: ..\CORE\core_cm3.h
-.\objects\tca62724.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tca62724.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\tca62724.o: ..\CORE\system_stm32f10x.h
 .\objects\tca62724.o: ..\CORE\stm32f10x_conf.h
 .\objects\tca62724.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -31,6 +31,6 @@
 .\objects\tca62724.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\tca62724.o: ..\DRIVERS\iic.h
 .\objects\tca62724.o: ..\DRIVERS\usart.h
-.\objects\tca62724.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\tca62724.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\tca62724.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tca62724.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\tca62724.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\tca62724.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

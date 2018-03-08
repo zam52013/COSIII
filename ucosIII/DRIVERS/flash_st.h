@@ -23,14 +23,17 @@
 	 
  #include "stm32f10x.h"
  
- #define BANK1_WRITE_END_ADDR 0x8080000					//½áÊøµØÖ· Õâ¸ö¸úÈİÁ¿´óĞ¡¶ø¶¨
- #define BANK1_WRITE_START_ADDR 0x8004000				//·ÖÅä8kÄÚ´æÓÃÓÚ´æ´¢boot
- #define FLASH_PAGE_SIZE 0x800		//·ÖÒ³´óĞ¡ Õâ¸ö¸úÈİÁ¿´óĞ¡¶ø¶
+	 typedef  void (*pFunction)(void);
+  extern pFunction Jump_To_Application;
+	 
+ #define BANK1_WRITE_END_ADDR 0x08080000					//½áÊøµØÖ· Õâ¸ö¸úÈİÁ¿´óĞ¡¶ø¶¨
+ #define BANK1_WRITE_START_ADDR 0x08004000				//·ÖÅä16kÄÚ´æÓÃÓÚ´æ´¢boot
+ #define FLASH_PAGE_SIZE 0x800		//·ÖÒ³´óĞ¡ 2kÕâ¸ö¸úÈİÁ¿´óĞ¡¶ø
  
 void Boot_Flash_ErasePage();
 void Boot_Flash_Write(uint32_t Addr,uint32_t *date,uint16_t num);
 void Boot_Flash_Read(uint32_t Addr,uint32_t *date,uint16_t num);
-	
+void BootLoader_Jump(void);
 	 
 #ifdef __cplusplus
 }

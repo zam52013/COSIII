@@ -2,7 +2,7 @@
 .\objects\fm25v01.o: ..\MODULES\fm25v01.h
 .\objects\fm25v01.o: ..\CORE\stm32f10x.h
 .\objects\fm25v01.o: ..\CORE\core_cm3.h
-.\objects\fm25v01.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\fm25v01.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\fm25v01.o: ..\CORE\system_stm32f10x.h
 .\objects\fm25v01.o: ..\CORE\stm32f10x_conf.h
 .\objects\fm25v01.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -31,6 +31,6 @@
 .\objects\fm25v01.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\fm25v01.o: ..\DRIVERS\spi.h
 .\objects\fm25v01.o: ..\DRIVERS\usart.h
-.\objects\fm25v01.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\fm25v01.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\fm25v01.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\fm25v01.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\fm25v01.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\fm25v01.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

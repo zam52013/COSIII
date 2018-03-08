@@ -2,7 +2,7 @@
 .\objects\delay.o: ..\DRIVERS\delay.h
 .\objects\delay.o: ..\CORE\stm32f10x.h
 .\objects\delay.o: ..\CORE\core_cm3.h
-.\objects\delay.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\delay.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\delay.o: ..\CORE\system_stm32f10x.h
 .\objects\delay.o: ..\CORE\stm32f10x_conf.h
 .\objects\delay.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

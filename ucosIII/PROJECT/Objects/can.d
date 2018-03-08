@@ -2,7 +2,7 @@
 .\objects\can.o: ..\DRIVERS\can.h
 .\objects\can.o: ..\CORE\stm32f10x.h
 .\objects\can.o: ..\CORE\core_cm3.h
-.\objects\can.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\can.o: ..\CORE\system_stm32f10x.h
 .\objects\can.o: ..\CORE\stm32f10x_conf.h
 .\objects\can.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -29,7 +29,7 @@
 .\objects\can.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_usart.h
 .\objects\can.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\can.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
-.\objects\can.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\can.o: ..\DRIVERS\usart.h
-.\objects\can.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\can.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\can.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

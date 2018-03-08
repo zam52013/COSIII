@@ -3,7 +3,7 @@
 .\objects\usb_prop.o: ..\STM32_USB-Driver\inc\platform_config.h
 .\objects\usb_prop.o: ..\CORE\stm32f10x.h
 .\objects\usb_prop.o: ..\CORE\core_cm3.h
-.\objects\usb_prop.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\usb_prop.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\usb_prop.o: ..\CORE\system_stm32f10x.h
 .\objects\usb_prop.o: ..\CORE\stm32f10x_conf.h
 .\objects\usb_prop.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

@@ -2,7 +2,7 @@
 .\objects\mass_mal.o: ..\STM32_USB-Driver\inc\platform_config.h
 .\objects\mass_mal.o: ..\CORE\stm32f10x.h
 .\objects\mass_mal.o: ..\CORE\core_cm3.h
-.\objects\mass_mal.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\mass_mal.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\mass_mal.o: ..\CORE\system_stm32f10x.h
 .\objects\mass_mal.o: ..\CORE\stm32f10x_conf.h
 .\objects\mass_mal.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

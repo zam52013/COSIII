@@ -102,6 +102,7 @@
 ".\objects\sim7600.o"
 ".\objects\tca62724.o"
 ".\objects\wifi_esp.o"
+".\objects\ms5611.o"
 --strict --scatter ".\Objects\ucosiii.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

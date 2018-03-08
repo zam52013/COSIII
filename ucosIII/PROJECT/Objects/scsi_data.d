@@ -4,7 +4,7 @@
 .\objects\scsi_data.o: ..\STM32_USB-Driver\inc\platform_config.h
 .\objects\scsi_data.o: ..\CORE\stm32f10x.h
 .\objects\scsi_data.o: ..\CORE\core_cm3.h
-.\objects\scsi_data.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\scsi_data.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\scsi_data.o: ..\CORE\system_stm32f10x.h
 .\objects\scsi_data.o: ..\CORE\stm32f10x_conf.h
 .\objects\scsi_data.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

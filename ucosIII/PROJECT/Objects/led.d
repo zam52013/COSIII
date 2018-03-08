@@ -2,7 +2,7 @@
 .\objects\led.o: ..\MODULES\led.h
 .\objects\led.o: ..\CORE\stm32f10x.h
 .\objects\led.o: ..\CORE\core_cm3.h
-.\objects\led.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\led.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\led.o: ..\CORE\system_stm32f10x.h
 .\objects\led.o: ..\CORE\stm32f10x_conf.h
 .\objects\led.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h
@@ -30,6 +30,6 @@
 .\objects\led.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_wwdg.h
 .\objects\led.o: ..\STM32F10x_StdPeriph_Driver\inc\misc.h
 .\objects\led.o: ..\DRIVERS\usart.h
-.\objects\led.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
-.\objects\led.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
-.\objects\led.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\led.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\led.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\led.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h

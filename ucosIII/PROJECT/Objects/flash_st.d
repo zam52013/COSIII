@@ -2,7 +2,7 @@
 .\objects\flash_st.o: ..\DRIVERS\flash_st.h
 .\objects\flash_st.o: ..\CORE\stm32f10x.h
 .\objects\flash_st.o: ..\CORE\core_cm3.h
-.\objects\flash_st.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\flash_st.o: d:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\flash_st.o: ..\CORE\system_stm32f10x.h
 .\objects\flash_st.o: ..\CORE\stm32f10x_conf.h
 .\objects\flash_st.o: ..\STM32F10x_StdPeriph_Driver\inc\stm32f10x_adc.h

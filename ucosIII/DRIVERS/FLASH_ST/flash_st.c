@@ -13,6 +13,9 @@
  */
  
  #include "flash_st.h"
+ 
+ pFunction Jump_To_Application;
+uint32_t JumpAddress;
 /*******************************************************************************
 函 数 名：void Boot_Flash_ErasePage(void)
 功能描述： 擦除flash
@@ -48,8 +51,7 @@
 	 FLASH_UnlockBank1();
 	 for(cnt=0;cnt<num;num++)
 	 {
-			FLASH_ProgramWord(Addr,*date);
-			date++;
+			FLASH_ProgramWord(Addr+(cnt*2),*(date++));
 	 }
 	 FLASH_LockBank1();
  }
@@ -77,13 +79,16 @@
 返回参数：无
 创建时间: 2018-01-24 by zam
 ********************************************************************************/
- void BootLoader_Jump(uint32_t Sect,uint32_t Msp,uint32_t Reset)
+ void BootLoader_Jump()
  {
-		uint32_t base;
-		uint32_t offset;
-		base=(Sect>NVIC_VectTab_FLASH)?NVIC_VectTab_FLASH:NVIC_VectTab_RAM;
-		NVIC_SetVectorTable(base,offset);
-		__set_MSP(Msp);
-		((void (*)())(Reset))();
+		if (((*(__IO uint32_t*)BANK1_WRITE_START_ADDR) & 0x2FFE0000 ) == 0x20000000)
+    { 
+      /* Jump to user application */
+      JumpAddress = *(__IO uint32_t*) (BANK1_WRITE_START_ADDR + 4);
+      Jump_To_Application = (pFunction) JumpAddress;
+      /* Initialize user application's Stack Pointer */
+      __set_MSP(*(__IO uint32_t*) BANK1_WRITE_START_ADDR);
+  	 	Jump_To_Application();
+    }
  }
  
