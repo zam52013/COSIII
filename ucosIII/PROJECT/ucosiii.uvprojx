@@ -978,6 +978,11 @@
               <FileType>1</FileType>
               <FilePath>..\MODULES\WIFI_ESP\wifi_esp.c</FilePath>
             </File>
+            <File>
+              <FileName>ms5611.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\MODULES\MS5611\ms5611.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

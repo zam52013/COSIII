@@ -1088,8 +1088,39 @@ static void Dma_init(void)
 	}
 #endif
 /////////////////////////////////////////////////////////////////////////
-	
-	
+/*******************************************************************************
+* 函数名  : UART_SendString
+* 描述    : USART发送字符串
+* 输入    : *s字符串指针
+* 输出    : 无
+* 返回    : 无 
+* 说明    : 无
+*******************************************************************************/
+void UART_SendString(USART_TypeDef* USARTx,char* s)
+{
+	while(*s)//检测字符串结束符
+	{
+		while(USART_GetFlagStatus(USARTx, USART_FLAG_TC)==RESET); 
+		USART_SendData(USARTx ,*s);//发送当前字符
+		s++;
+	}
+}	
+/*******************************************************************************
+函 数 名：void Send_Data_Byte(USART_TypeDef* USARTx,unsigned char *buf,int len)
+功能描述：发送数据
+入口参数：	buf 数据   len:长度						
+返回参数：
+创建时间: 2017-11-02 by zam
+********************************************************************************/
+void Send_Data_Byte(USART_TypeDef* USARTx,unsigned char *buf,int len)
+{
+	while(len--)
+	{
+		USART_SendData(USARTx,*buf);
+		while(USART_GetFlagStatus(USARTx, USART_FLAG_TC) == RESET);
+		buf++;
+	}
+}
 void Usart_init(void)
 {
 	Usat_rcc_init();

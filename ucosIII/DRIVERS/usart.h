@@ -275,7 +275,8 @@ extern unsigned char USE_USART;
 #ifdef USINGE_UART5
 	extern struct usart_messg UART5_MESSG;
 #endif
-
+void UART_SendString(USART_TypeDef* USARTx,char* s);
+void Send_Data_Byte(USART_TypeDef* USARTx,unsigned char *buf,int len);
 void Usart_init(void);
 
 #ifdef __cplusplus
