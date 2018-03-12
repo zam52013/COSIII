@@ -26,148 +26,15 @@ Project File Date:  03/08/2018
 
 <h2>Output:</h2>
 Build target 'ucosiii'
-compiling ms5611.c...
-..\MODULES\ms5611.h(53): warning:  #1-D: last line of file ends without a newline
-   
-..\MODULES\MS5611\ms5611.c(117): warning:  #177-D: variable "pressureTemp" was declared but never referenced
-                                                pressureTemp,
-..\MODULES\MS5611\ms5611.c(190): warning:  #1-D: last line of file ends without a newline
-   
-..\MODULES\MS5611\ms5611.c: 3 warnings, 0 errors
+compiling ds18b20.c...
+..\MODULES\ds18b20.h(45): warning:  #1-D: last line of file ends without a newline
+                                                                                
+..\MODULES\DS18B20\ds18b20.c(216): warning:  #1-D: last line of file ends without a newline
+  }
+..\MODULES\DS18B20\ds18b20.c: 2 warnings, 0 errors
 linking...
-Program Size: Code=65608 RO-data=5800 RW-data=324 ZI-data=43548  
-".\Objects\ucosiii.axf" - 0 Error(s), 3 Warning(s).
-
-<h2>Collection of Component include folders:</h2>
-  C:\Users\zhangaiming\Desktop\zam\ucosIII\PROJECT\RTE
-  d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
-
-<h2>Collection of Component Files used:</h2>
-static void Init_MS5611_Cs(void)
-..\MODULES\MS5611\ms5611.c: 6 warnings, 0 errors
-linking...
-Program Size: Code=65608 RO-data=5800 RW-data=324 ZI-data=43548  
-".\Objects\ucosiii.axf" - 0 Error(s), 6 Warning(s).
-
-<h2>Collection of Component include folders:</h2>
-  C:\Users\zhangaiming\Desktop\zam\ucosIII\PROJECT\RTE
-  d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
-
-<h2>Collection of Component Files used:</h2>
-DFP\1.1.0\Device\Include
-
-<h2>Collection of Component Files used:</h2>
-Target not created.
- warning:  #177-D: function "MS5611_Reset" was declared but never referenced
-   static void MS5611_Reset()
-..\MODULES\MS5611\ms5611.c(37): warning:  #177-D: function "MS5611_Read_PROM" was declared but never referenced
-   static void MS5611_Read_PROM()
-..\MODULES\MS5611\ms5611.c(130): warning:  #177-D: function "Init_MS5611_Cs" was declared but never referenced
-   static void Init_MS5611_Cs(void)
-..\MODULES\MS5611\ms5611.c: 7 warnings, 4 errors
-".\Objects\ucosiii.axf" - 4 Error(s), 7 Warning(s).
-
-<h2>Collection of Component include folders:</h2>
-  C:\Users\zhangaiming\Desktop\zam\ucosIII\PROJECT\RTE
-  d:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.1.0\Device\Include
-
-<h2>Collection of Component Files used:</h2>
-Target not created.
-
-compiling os_pend_multi.c...
-compiling os_prio.c...
-compiling os_q.c...
-compiling os_sem.c...
-compiling os_stat.c...
-compiling os_task.c...
-compiling os_tick.c...
-compiling os_time.c...
-compiling os_tmr.c...
-compiling os_var.c...
-assembling os_cpu_a.s...
-compiling ad.c...
-..\DRIVERS\AD\ad.c(34): warning:  #177-D: variable "ADC_InitStructure" was declared but never referenced
-                ADC_InitTypeDef ADC_InitStructure;
-..\DRIVERS\AD\ad.c: 1 warning, 0 errors
-compiling can.c...
-compiling delay.c...
-..\DRIVERS\delay\delay.c(16): warning:  #550-D: variable "fac_ms" was set but never used
-  static u16 fac_ms=0;//ms延时倍乘数,在ucos下,代表每个节拍的ms数
-..\DRIVERS\delay\delay.c: 1 warning, 0 errors
-compiling flash_st.c...
-..\DRIVERS\flash_st.h(33): warning:  #1295-D: Deprecated declaration Boot_Flash_ErasePage - give arg types
-  void Boot_Flash_ErasePage();
-..\DRIVERS\flash_st.h(44): warning:  #1-D: last line of file ends without a newline
-   
-..\DRIVERS\FLASH_ST\flash_st.c(94): warning:  #1-D: last line of file ends without a newline
-   
-..\DRIVERS\FLASH_ST\flash_st.c: 3 warnings, 0 errors
-compiling iic.c...
-compiling init.c...
-compiling spi.c...
-compiling usart.c...
-..\DRIVERS\UART\usart.c(315): warning:  #177-D: variable "DMA_InitStruct" was declared but never referenced
-        DMA_InitTypeDef DMA_InitStruct;
-..\DRIVERS\UART\usart.c(316): warning:  #177-D: variable "NVIC_InitStructure" was declared but never referenced
-        NVIC_InitTypeDef NVIC_InitStructure;
-..\DRIVERS\UART\usart.c: 2 warnings, 0 errors
-compiling da.c...
-..\DRIVERS\da.h(34): warning:  #1-D: last line of file ends without a newline
-   
-..\DRIVERS\DAC\da.c: 1 warning, 0 errors
-compiling fast_copy.c...
-compiling ff.c...
-compiling diskio.c...
-..\LIBRRARY\FAT32\diskio.c(115): warning:  #177-D: variable "result" was declared but never referenced
-        int result;
-..\LIBRRARY\FAT32\diskio.c(169): warning:  #177-D: variable "result" was declared but never referenced
-        int result;
-..\LIBRRARY\FAT32\diskio.c(223): warning:  #177-D: variable "result" was declared but never referenced
-        int result;
-..\LIBRRARY\FAT32\diskio.c: 3 warnings, 0 errors
-compiling ffsystem.c...
-compiling ffunicode.c...
-compiling GUI.c...
-compiling math_stm.c...
-compiling messg_recive.c...
-..\LIBRRARY\messg_recive.h(40): warning:  #1-D: last line of file ends without a newline
-   
-..\LIBRRARY\MESSG_DATA\messg_recive.c: 1 warning, 0 errors
-compiling messg_send.c...
-compiling dht11.c...
-compiling fm25v01.c...
-..\MODULES\FM25V01\fm25v01.c(98): warning:  #1-D: last line of file ends without a newline
-   
-..\MODULES\FM25V01\fm25v01.c: 1 warning, 0 errors
-compiling Lcd_Driver.c...
-compiling led.c...
-..\MODULES\LED\led.c(109): warning:  #188-D: enumerated type mixed with another type
-                GPIO_WriteBit(LED_PORT, LED_POW,!GPIO_ReadOutputDataBit(LED_PORT,LED_POW));
-..\MODULES\LED\led.c(112): warning:  #188-D: enumerated type mixed with another type
-                GPIO_WriteBit(LED_PORT, LED_RED,!GPIO_ReadOutputDataBit(LED_PORT,LED_RED));
-..\MODULES\LED\led.c(115): warning:  #188-D: enumerated type mixed with another type
-                GPIO_WriteBit(LED_PORT, LED_ST,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST));
-..\MODULES\LED\led.c(118): warning:  #188-D: enumerated type mixed with another type
-                GPIO_WriteBit(LED_PORT, LED_ST1,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST1));
-..\MODULES\LED\led.c(121): warning:  #188-D: enumerated type mixed with another type
-                GPIO_WriteBit(LED_PORT, LED_ST2,!GPIO_ReadOutputDataBit(LED_PORT,LED_ST2));
-..\MODULES\LED\led.c: 5 warnings, 0 errors
-compiling mpu9250.c...
-compiling stm32_eval_sdio_sd.c...
-compiling sim7600.c...
-..\MODULES\SIM7600\sim7600.c(79): warning:  #167-D: argument of type "unsigned char *" is incompatible with parameter of type "const char *"
-                        if(strstr(SIM_Mess.messg_buff,reply1) != NULL)
-..\MODULES\SIM7600\sim7600.c: 1 warning, 0 errors
-compiling tca62724.c...
-..\MODULES\tca62724.h(82): warning:  #1-D: last line of file ends without a newline
-        
-..\MODULES\TCA62724\tca62724.c(21): warning:  #177-D: function "Send_Led_IIC_Write" was declared but never referenced
-   static unsigned char Send_Led_IIC_Write(unsigned char* buf,  uint32_t nbyte, uint8_t SlaveAddress)
-..\MODULES\TCA62724\tca62724.c: 2 warnings, 0 errors
-compiling wifi_esp.c...
-linking...
-Program Size: Code=65608 RO-data=5800 RW-data=324 ZI-data=43548  
-".\Objects\ucosiii.axf" - 0 Error(s), 24 Warning(s).
+Program Size: Code=65692 RO-data=5800 RW-data=324 ZI-data=43548  
+".\Objects\ucosiii.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   C:\Users\zhangaiming\Desktop\zam\ucosIII\PROJECT\RTE
